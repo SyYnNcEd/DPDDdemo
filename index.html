@@ -20,20 +20,11 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	  	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap);
-	    var markers = [];  //create a global array where you store your markers
 	    var marker = L.marker([51.12983, -2.73341]).addTo(mymap);
 	    marker.bindPopup("<img style='width: 200px' src='ITandComputers.jpg'><p><b>C Block</b></p><br>T-Level Digital");
 	    var marker1 = L.marker([51.12993, -2.73331]).addTo(mymap);
 	    marker1.bindPopup("<img style='width: 200px' src='ITandComputers.jpg'><p><b>C Block</b></p><br>Engineering");
 	    //marker.bindPopup("<b>C Block</b><br>T-Level Digital").openPopup();
-	    
-	    for (var i = 0; i < 100; i++) {
-  var latLng = new google.maps.LatLng(data.photos[i].latitude,
-      data.photos[i].longitude);
-  var marker = new google.maps.Marker({'position': latLng});
-  markers.push(marker);  //push individual marker onto global array
-}
-var markerCluster = new MarkerClusterer(map, markers);  //create clusterer and push the global array of markers into it.
 	    
 	    mymap.addControl(new L.Control.Fullscreen());
     </script>
